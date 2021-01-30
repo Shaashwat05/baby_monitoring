@@ -100,5 +100,36 @@
   .text {
     text-align:center;
     font-size: 5vh;
+    margin-top: 3vh;
     color: rgb(0, 255, 0);
+  }
+  .instructions {
+    display: block;
+    margin-left: 5vw;
+    margin-right: auto;
+    margin-top: 5vh;
+    float: left;
+    width: 30vw;
+  }
+  .bul {
+    color: rgb(134, 5, 5);
+    list-style:none;
+    position: relative;
+    padding-left:30px;
+    line-height: 2;
+    font-size:20px;
+  } 
+  .bul:before {
+    font-family:FontAwesome;
+    position: absolute;
+    left: 0;
+    color: #e44a4a;
+    font-size:20px;
+    content:"\f004";
+  }
+
+  .title {
+    color:rgb(85, 6, 6);
+    padding-left:40px;
+    font-size:30px;
   }
