@@ -1,3 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Kanit:900");
+@font-face {
+  font-family: 'Luckiest Guy';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/luckiestguy/v11/_gP_1RrxsjcxVyin9l9n_j2hTd52.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 * {
     box-sizing: border-box;
   }
@@ -16,12 +24,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #e44a4a;
-    color: #ffffff;
+    background: rgba(199, 97, 97, 0.281);
+    color: #fff;
+    font-family: "Kanit";
+    font-size: 25px;
+    text-shadow: 0 1px 0 #dba1a1, 0 2px 0 #d89999, 0 3px 0 #d59292, 0 4px 0 #d28a8a, 0 5px 0 #cf8383, 0 6px 0 #cd7c7c, 0 7px 0 #ca7474, 0 8px 0 #c76d6d, 0 0 5px rgba(230, 139, 139, 0.05), 0 -1px 3px rgba(230, 139, 139, 0.2), 0 9px 9px rgba(230, 139, 139, 0.3), 0 12px 12px rgba(230, 139, 139, 0.3), 0 15px 15px rgba(230, 139, 139, 0.3);
   }
   
   .logo {
-    font-size: 20px;
+    font-size: 25px;
     margin: 10px;
   }
   .logo a {
@@ -91,9 +102,12 @@
     }
   }
   .title {
-    color:rgb(85, 6, 6);
     padding-left:40px;
-    font-size:30px;
+    font-size: 40px;
+    font-family: 'Luckiest Guy';
+    color:rgb(85, 6, 6);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   .bulp {
     color: rgb(134, 5, 5);
