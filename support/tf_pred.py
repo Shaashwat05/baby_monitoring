@@ -1,5 +1,5 @@
 import sqlite3
-import tensorflow as tf
+import tflite_runtime.interpreter as tflite
 import cv2
 import numpy as np
 import datetime
@@ -35,26 +35,27 @@ def poseproc(img):
     return kp, poq
 
 
-interpreter = tf.lite.Interpreter(model_path="support/posenet257.tflite")
+interpreter = tflite.Interpreter(model_path="support/posenet257.tflite")
 interpreter.allocate_tensors()
 input_details=interpreter.get_input_details()
 output_details=interpreter.get_output_details()
 
 fr=30
-saveInterval=250
+saveInterval=1000
 cap=cv2.VideoCapture(0)
 i=0
 
 while True:
     _, frame=cap.read()
-    frame1=imgprep(np.copy(frame))
-    dots, jk=poseproc(frame1)
-    _, buffer = cv2.imencode('.jpg', frame)
-    frame0 = buffer.tobytes()
-    str1 = b'--frame\r\n'+b'Content-Type: image/jpeg\r\n\r\n' + frame0 + b'\r\n'
+    
     conn=sqlite3.connect('support/data.db')
 
     if i>=saveInterval/fr:
+        frame1=imgprep(np.copy(frame))
+        dots, jk=poseproc(frame1)
+        _, buffer = cv2.imencode('.jpg', frame)
+        frame0 = buffer.tobytes()
+        str1 = b'--frame\r\n'+b'Content-Type: image/jpeg\r\n\r\n' + frame0 + b'\r\n'
         conn.execute("INSERT INTO pos VALUES(?,?)", (str(datetime.datetime.now()), str(jk[0]>=0.8 and jk[1]>=0.8 and jk[2]>=0.8)))
         conn.execute("UPDATE img SET jpg=? WHERE 1=1", (str1,))
         i=0
@@ -63,11 +64,11 @@ while True:
 
     conn.commit()
     conn.close()
-    frame1 = frame1*127.5+127.5 
-    print(jk)       
-    cv2.imshow("im",cv2.resize(frame,(512,512)))
+    #frame1 = frame1*127.5+127.5 
+    #print(jk)       
+    #cv2.imshow("im",cv2.resize(frame,(512,512)))
     if cv2.waitKey(1) == ord('q'):
         break
 
 cap.release()
-cv2.destroyAllWindows()
+#cv2.destroyAllWindows()

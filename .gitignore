@@ -1,1 +1,3 @@
 *.db
+support/__pycache__
+support/*.db-journal
