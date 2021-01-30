@@ -1,12 +1,12 @@
 import sqlite3
 
-def init(dest='data.db'):
+def init(dest='support/data.db'):
     conn = sqlite3.connect(dest)
     try:
         conn.execute("CREATE TABLE pos(DTIME TEXT, BACK TEXT)")
-        conn.execute("CREATE TABLE img(JPG TEXT)")
-        conn.execute("INSERT INTO img VALUES(?)", ("abc",))
+        conn.execute("CREATE TABLE img(JPG BLOB)")
+        conn.execute("INSERT INTO img VALUES(?)", (b"abc",))
         conn.commit()
-        pass
     finally:
         conn.close()
+init()

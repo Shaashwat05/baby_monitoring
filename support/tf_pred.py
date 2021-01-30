@@ -42,33 +42,32 @@ input_details=interpreter.get_input_details()
 output_details=interpreter.get_output_details()
 
 fr=30
-saveInterval=1000
+saveInterval=250
 cap=cv2.VideoCapture(0)
 i=0
 
 while True:
     _, frame=cap.read()
-    frame1=imgprep(frame)
+    frame1=imgprep(np.copy(frame))
     dots, jk=poseproc(frame1)
     _, buffer = cv2.imencode('.jpg', frame)
-    frame = buffer.tobytes()
-    print(frame.decode())
-    break
-    conn=sqlite3.connect('data.db')
+    frame0 = buffer.tobytes()
+    str1 = b'--frame\r\n'+b'Content-Type: image/jpeg\r\n\r\n' + frame0 + b'\r\n'
+    conn=sqlite3.connect('support/data.db')
 
     if i>=saveInterval/fr:
         conn.execute("INSERT INTO pos VALUES(?,?)", (str(datetime.datetime.now()), str(jk[0]>=0.8 and jk[1]>=0.8 and jk[2]>=0.8)))
+        conn.execute("UPDATE img SET jpg=? WHERE 1=1", (str1,))
         i=0
     else:
         i+=1
 
-    # conn.execute("UPDATE img SET jpg=? WHERE 1=1", )
     conn.commit()
     conn.close()
     frame1 = frame1*127.5+127.5 
     print(jk)       
-    cv2.imshow("im",cv2.resize(frame1.reshape(257, 257, 3),(512,512)))
-    if cv2.waitKey(fr) == ord('q'):
+    cv2.imshow("im",cv2.resize(frame,(512,512)))
+    if cv2.waitKey(1) == ord('q'):
         break
 
 cap.release()
