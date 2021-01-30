@@ -1,3 +1,4 @@
+from datetime import datetime
 from flask import Flask, request, Response, render_template
 from flask_cors import CORS
 import sqlite3
@@ -35,6 +36,15 @@ def dange():
     if a=="True":
         return "0"
     return "1"
+
+@app.route('/pie', methods=['POST', 'GET'])
+def pies():
+    conn = sqlite3.connect("support/data.db")
+    a=conn.execute("SELECT COUNT(*) FROM pos WHERE BACK=? AND DTIME LIKE ? ORDER BY DTIME", ("False", str(datetime.now())[:10]+"%")).fetchall()[0][0]
+    t=conn.execute("SELECT COUNT(*) FROM pos").fetchall()[0][0]
+    conn.close()
+    return "%.2f"%(a*100/t)
+
 
 if __name__=="__main__":
     app.run(debug=True)
