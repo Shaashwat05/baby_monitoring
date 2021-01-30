@@ -41,7 +41,7 @@
         <p class="text"></p>
         <script>
             function myFunction() {
-                $.post("/danger", {}, function getter(data, response){
+                $.post("/danger", {}, function getter(data, status){
                     console.log(response)
                     if (response == "1") {
                     document.getElementById("text").style.color = "red";
