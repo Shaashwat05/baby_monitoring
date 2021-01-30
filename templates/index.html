@@ -37,7 +37,25 @@
             <li class="bul"> General baby tips and precautions are mentioned in the website. Information regarding SIDS (Sudden Infant Death Syndrome) is provided through Youtube references and news articles. </li>
         </ul>
         </div>
-        <img src="../static/IMAGES/download.jpg" alt="Baby Video" width="900" height="570" class="baby">
-        <p class="text">Message: Your baby is in the right position</p>
+        <img src="/vfeed" alt="Baby Video" width="900" height="570" class="baby">
+        <p class="text"></p>
+        <script>
+            function myFunction() {
+                $.post("/danger", {}, function getter(data, response){
+                    console.log(response)
+                    if (response == "1") {
+                    document.getElementById("text").style.color = "red";
+                    document.getElementById("text").innerHTML = "Warning: Your baby is not in the right position";
+                    document.getElementById("baby").style.borderColor = "red";
+                    }
+                    else {
+                        document.getElementById("text").style.color = "green";
+                        document.getElementById("text").innerHTML = "Message: Your baby is in the right position";
+                    }
+                });
+                
+            }
+            setTimeout(myFunction, 1000);
+        </script>
     </body>
 </html>
