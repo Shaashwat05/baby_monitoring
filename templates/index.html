@@ -13,18 +13,18 @@
         
     </head>
     
-    <body>
+    <body onload="setInterval(myFunction, 3000);">
         <header>
             <nav class="navbar">
-                <div class="logo"><a href="#">SIDS</a></div>
+                <div class="logo"><a href="/">SIDS</a></div>
                 <a class="togglebtn" href="#"><span class="line"></span>
                     <span class="line"></span>
                     <span class="line"></span></a>
                 <div class="navbar-links">
                     <ul>
                         <li><a href="#">Home</a></li>
-                        <li><a href="stats.html">Statistics</a></li>
-                        <li><a href="articles.html">Articles</a></li>
+                        <li><a href="statistics">Statistics</a></li>
+                        <li><a href="articles">Articles</a></li>
                     </ul>
                 </div>
             </nav>
@@ -37,25 +37,24 @@
             <li class="bul"> General baby tips and precautions are mentioned in the website. Information regarding SIDS (Sudden Infant Death Syndrome) is provided through Youtube references and news articles. </li>
         </ul>
         </div>
-        <img src="/vfeed" alt="Baby Video" width="900" height="570" class="baby">
-        <p class="text"></p>
+        <img src="/vfeed" alt="Baby Video" width="900" height="570" class="baby" id="baby">
+        <p class="text" id="text"></p>
         <script>
             function myFunction() {
-                $.post("/danger", {}, function getter(data, status){
-                    console.log(response)
+                $.post("/danger", {}, function getter(response, error){
+                    console.log(response);
                     if (response == "1") {
-                    document.getElementById("text").style.color = "red";
-                    document.getElementById("text").innerHTML = "Warning: Your baby is not in the right position";
-                    document.getElementById("baby").style.borderColor = "red";
+                        document.getElementById("text").style.color = "red";
+                        document.getElementById("text").innerHTML = "Warning: Your baby is not in the right position";
+                        document.getElementById("baby").style.borderColor = "red";
                     }
                     else {
                         document.getElementById("text").style.color = "green";
                         document.getElementById("text").innerHTML = "Message: Your baby is in the right position";
+                        document.getElementById("baby").style.borderColor = "green";
                     }
                 });
-                
             }
-            setTimeout(myFunction, 1000);
         </script>
     </body>
 </html>
