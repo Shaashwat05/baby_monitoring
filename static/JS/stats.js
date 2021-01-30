@@ -128,6 +128,7 @@ function pieupdate(){
 
 function lnfupdate(){
   $.post('/lnf', {}, (data, error)=>{
+    data=JSON.parse(data);
     var trace1 = {
         x: data.dates,
         y: data.val,
@@ -193,6 +194,7 @@ function gtempupdate(){
 
 function ltempupdate(){
   $.post('/ltemp', {}, (data, error)=>{
+    data=JSON.parse(data);
     trace4 = {
       type: 'scatter',
       x: data.x,

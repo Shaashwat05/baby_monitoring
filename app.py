@@ -3,6 +3,7 @@ from flask import Flask, request, Response, render_template
 from flask_cors import CORS
 import sqlite3
 from support.db_init import init
+import json
 
 init()
 app = Flask(__name__)
@@ -64,7 +65,7 @@ def lnfs():
         if sum(tl)>=tot:
             break
     conn.close()
-    return {'val': [i*100/j for i,j in zip(al, tl)], 'dates': dl}
+    return json.dumps({'val': [i*100/j for i,j in zip(al, tl)], 'dates': dl})
 
 @app.route('/ltemp', methods=['POST', 'GET'])
 def ltemps():
@@ -73,14 +74,14 @@ def ltemps():
     conn=sqlite3.connect('support/data.db')
     l=conn.execute("SELECT * FROM temp ORDER BY DTIME").fetchall()
     conn.close()
-    return {
+    return json.dumps({
         'x': [i for i, _ in l],
         'y': [i for _, i in l]
-    }
+    })
 @app.route('/gtemp', methods=['POST', 'GET'])
 def gtemps():
     conn=sqlite3.connect('support/data.db')
-    a=conn.execute("SELECT TEM FROM temp ORDER BY DTIME").fetchall()[0][0]
+    a=conn.execute("SELECT TEM FROM temp ORDER BY DTIME DESC").fetchall()[0][0]
     return str(a)
 
 if __name__=="__main__":

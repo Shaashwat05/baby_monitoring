@@ -9,6 +9,7 @@ while True:
     print("Object Temperature :", sensor.get_object_1())
     conn = sqlite3.connect('support/data.db')
     conn.execute("INSERT INTO temp VALUES(?, ?)", (datetime.now(), 32+(sensor.get_object_1()*9/5)))
+    conn.commit()
     conn.close()
     time.sleep(3)
 bus.close()
