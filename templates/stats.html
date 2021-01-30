@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>SIDS</title>
+        <link rel="icon" href="https://image.flaticon.com/icons/svg/2913/2913584.svg" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="../static/CSS/stats.css">
+        <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+    </head>
+    
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo"><a href="#">SIDS</a></div>
+                <a class="togglebtn" href="#"><span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span></a>
+                <div class="navbar-links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="inst.html">Instructions</a></li>
+                        <li><a href="#">Statistics</a></li>
+                        <li><a href="articles.html">Articles</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="flex-container">
+            <div id='myDiv1' class="container1"></div>
+            <div id='myDiv2' class="container"></div>
+        </div>
+        <div class="flex-container">
+            <div id='myDiv3' class="container"></div>
+            <div id='myDiv4' class="container1"></div>
+        </div>
+        <script src="../static/JS/stats.js"></script> 
+        <script>
+            const toggleBtn = document.getElementsByClassName('togglebtn')[0]
+            const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+            toggleBtn.addEventListener('click', () => {
+                navbarLinks.classList.toggle('active')
+            });
+        </script>
+      </body>
+    </html>
