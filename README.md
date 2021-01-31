@@ -23,8 +23,8 @@ SIDS plagues mankind with its unpredictable nature. No more, as BabyShield monit
 ## Implementation: 
 <img src="https://github.com/Shaashwat05/baby_monitoring/blob/master/resources/ckt_diag.png?raw=true"> 
 
-The whole monitoring starts at the crib of the baby. **Camera** and **infrared thermometer(MLX90614)** are used to measure the posture and temperature of the baby continuously. Using these values and certain algorithms like **Pose Estimation AI(PoseNet)** of **tflite** the danger value of the baby is determined. These values are stored in an **SQLite Databse**. When a parent wants to monitor their chilldern or see their live feed, they can open our WebApp and view their baby and their staistical data. 
-The data from is taken and stored in **Raspberry Pi** which hosts a local **Flask Server** and through it sends the data to the parents. The WebApp has live video feed, statistics using **PLotly** and web embeddings of YouTube videos and articles.
+The whole monitoring starts at the crib of the baby. **Camera** and **infrared thermometer(MLX90614)** are used to measure the posture and temperature of the baby continuously. Using these values and certain algorithms like **Pose Estimation AI(PoseNet)** the baby's posture is determined which helps us to check if the baby is in the correct postion or not. These values are stored in an **SQLite Database**. When a parent wants to monitor their infants and see their live feed, they can open our WebApp and view their baby and their staistical data. 
+The data from sensors is taken and stored in **Raspberry Pi** which hosts a local **Flask Server** and through it sends the data to the parents. The WebApp has live video feed, statistics using **PLotly** and web embeddings of YouTube videos and articles.
 
 ## Technology Stack  
 
@@ -38,7 +38,7 @@ The **flask server** waits for the parents to open the website. Until the websit
 
 ### WebApp:
 
-THe WebApp uses **HTML**,**CSS**, **javascipt** and **Jquery** for aall the frontend and preprocessing of shown data. **Plotly** is used for displaying the statistics of the baby.
+THe WebApp uses **HTML**,**CSS**, **javascipt** and **JQuery** for all the frontend data requests and preprocessing of shown data. **Plotly** is used for displaying the statistics of the baby.
 
 ## Camera Feed
 <img src="https://github.com/Shaashwat05/baby_monitoring/blob/master/resources/Landing.png?raw=true">
@@ -68,15 +68,15 @@ smbus2
 
 ## Challanges
 
-During the implementation of our idea we faced issues tackling technology and computaion bounds. The integration of our code also resulted in some errors in the way:
+During the implementation of our idea we faced issues tackling, technology and computation bounds. The integration of our code also resulted in some dependency issues along the way.
 * Reducing the time complexity of Pose Estimation and inference.
-* Sending continuious data from Raspberry Pi to parent device.
-* We tried to implement audio monitoring as well. We faced challenges regarding syncing audio and video.
-* Implementing all algorithms in a low processing system like Raspberry Pi.
+* Sending continuous data from Raspberry Pi to client device.
+* We tried to implement audio monitoring as well. We faced challenges involving synchronization of audio and video.
+* Implementing all algorithms in a low-end processing system - Raspberry Pi.
 
 ## Getting Started
 
-Download a python interpeter preferable a version beyond 3.0. Install the prerequisute libraries given above preferably using the latest version of pip/pip3. Run flask_app.py to start the flask backend in raspberry pi. Open the link given in any device connected to the same WiFi device to open the website. 
+Download a python interpeter preferably a version beyond 3.0. Install the prerequisute libraries given above preferably using the latest version of pip/pip3. Run flask_app.py to start the flask backend in raspberry pi. Open the link given in any device connected to the same WiFi device to open the website. 
 
 ```
 $python3 support/temperature.py &
