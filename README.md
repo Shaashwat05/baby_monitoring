@@ -47,7 +47,7 @@ THe WebApp uses **HTML**,**CSS**, **javascipt** and **Jquery** for aall the fron
 <img src="https://github.com/Shaashwat05/baby_monitoring/blob/master/resources/Statistics.png?raw=true" >
 
 ## Information Page
-<img src="">
+<img src="https://github.com/Shaashwat05/baby_monitoring/blob/master/resources/Information.png?raw=true">
 
   
 
