@@ -1,7 +1,7 @@
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
-<a href="https://www.tensorflow.org/"><img src="https://img.shields.io/badge/Tensorflow-v2.2.0-orange?style=for-the-badge&logo=tensorflow"></a>
+<a href="https://www.tensorflow.org/"><img src="https://img.shields.io/badge/Tensorflow lite-v2.5.0-orange?style=for-the-badge&logo=tensorflow"></a>
 <a href="https://https://www.raspberrypi.org/"><img src="https://img.shields.io/badge/Raspberry%20Pi-3B+-red?style=for-the-badge&logo=raspberry-pi"></a>
 
 
@@ -20,7 +20,8 @@ SIDS plagues mankind with its unpredictable nature. No more, as BabyShield monit
 * An easy to use and informative user interface for every parent.
 
 
-## Implementation:  
+## Implementation: 
+<img src=""> 
 
 The whole monitoring starts at the crib of the baby. **Camera** and **infrared thermometer(MLX90614)** are used to measure the posture and temperature of the baby continuously. Using these values and certain algorithms like **Pose Estimation AI(PoseNet)** of **tflite** the danger value of the baby is determined. These values are stored in an **SQLite Databse**. When a parent wants to monitor their chilldern or see their live feed, they can open our WebApp and view their baby and their staistical data. 
 The data from is taken and stored in **Raspberry Pi** which hosts a local **Flask Server** and through it sends the data to the parents. The WebApp has live video feed, statistics using **PLotly** and web embeddings of YouTube videos and articles.
