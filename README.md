@@ -21,7 +21,7 @@ SIDS plagues mankind with its unpredictable nature. No more, as BabyShield monit
 
 
 ## Implementation: 
-<img src=""> 
+<img src="https://github.com/Shaashwat05/baby_monitoring/blob/master/resources/ckt_diag.png?raw=true"> 
 
 The whole monitoring starts at the crib of the baby. **Camera** and **infrared thermometer(MLX90614)** are used to measure the posture and temperature of the baby continuously. Using these values and certain algorithms like **Pose Estimation AI(PoseNet)** of **tflite** the danger value of the baby is determined. These values are stored in an **SQLite Databse**. When a parent wants to monitor their chilldern or see their live feed, they can open our WebApp and view their baby and their staistical data. 
 The data from is taken and stored in **Raspberry Pi** which hosts a local **Flask Server** and through it sends the data to the parents. The WebApp has live video feed, statistics using **PLotly** and web embeddings of YouTube videos and articles.
