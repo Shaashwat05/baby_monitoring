@@ -40,21 +40,14 @@ The **flask server** waits for the parents to open the website. Until the websit
 
 THe WebApp uses **HTML**,**CSS**, **javascipt** and **Jquery** for aall the frontend and preprocessing of shown data. **Plotly** is used for displaying the statistics of the baby.
 
-## Login Page
+## Camera Feed
+<img src="https://github.com/Shaashwat05/baby_monitoring/blob/master/resources/Landing.png?raw=true">
+
+## Statistics
+<img src="https://github.com/Shaashwat05/baby_monitoring/blob/master/resources/Statistics.png?raw=true" >
+
+## Information Page
 <img src="">
-
-## Catalog
-<img src="" >
-
-## Course Page
-<img src="">
-
-## AI analytics
-<img src="">
-
-## Profile Page
-<img src="">
-
 
   
 
