@@ -2,14 +2,14 @@
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
 <a href="https://www.tensorflow.org/"><img src="https://img.shields.io/badge/Tensorflow-v2.2.0-orange?style=for-the-badge&logo=tensorflow"></a>
-<a href="https://jupyter.org/"><img src="https://img.shields.io/badge/Jupyter%20Notebook-v6.1.3-orange?style=for-the-badge&logo=jupyter"></a>
+<a href="https://https://www.raspberrypi.org/"><img src="https://img.shields.io/badge/Raspberry%20Pi-3B+-red?style=for-the-badge&logo=raspberry-pi"></a>
 
 
 
 
 
 
-# <img src="https://github.com/sagnik106/EdTutor/blob/master/static/images/favicon.PNG" width="5%" style="padding:2px">Baby Shield
+# <img src="https://github.com/Shaashwat05/baby_monitoring/blob/master/static/IMAGES/logo.png" width="5%" style="padding:2px">Baby Shield
 SIDS plagues mankind with its unpredictable nature. No more, as BabyShield monitors your baby remotely. Armed with technologies like RPI, PostNet, it makes sure your baby gets through the night.
 
 ### USP
@@ -52,7 +52,7 @@ THe WebApp uses **HTML**,**CSS**, **javascipt** and **Jquery** for aall the fron
 <img src="">
 
 ## Profile Page
-<!img src="">
+<img src="">
 
 
   
@@ -82,16 +82,17 @@ During the implementation of our idea we faced issues tackling technology and co
 
 ## Getting Started
 
-Download a python interpeter preferable a version beyond 3.0. Install the prerequisute libraries given above preferably using the latest version of pip/pip3. Run flask_app.py to start the flask backend in raspberry pi. Open the link given in a parent device to open the website. 
+Download a python interpeter preferable a version beyond 3.0. Install the prerequisute libraries given above preferably using the latest version of pip/pip3. Run flask_app.py to start the flask backend in raspberry pi. Open the link given in any device connected to the same WiFi device to open the website. 
 
 ```
-$python3 final_app.py
-
+$python3 support/temperature.py &
+python3 support/tf_pred.py &
+sudo python3 app.py
 ```
 
 ## Future Aspects
 
-The future aspects will contain audio monitoring, pressure monitoring that we increase the security significantly. The Website can be broadened to contain more information, expert views, scientific discoveries regarding SIDS. ON a bigger scale we can make the monitoring system to encompasss more diseases related to child safety.
+The future aspects will contain audio monitoring, pressure monitoring that we increase the security significantly. The Website can be broadened to contain more information, expert views, scientific discoveries regarding SIDS. ON a bigger scale we can make the monitoring system to encompasss more diseases related to child safety. Integration of alarms for emergency services will provide a faster response and potentially save a little one's life.
 
 ## Authors
 
