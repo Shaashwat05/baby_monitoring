@@ -27,10 +27,15 @@
   .logo {
     font-size: 25px;
     margin: 10px;
+    display: flex;
+    align-items: center;
   }
   .logo a {
     text-decoration: none;
     color: #ffffff;
+    margin-left: 10px;
+  }
+  .logo img {
     margin-left: 20px;
   }
   .navbar-links ul {
