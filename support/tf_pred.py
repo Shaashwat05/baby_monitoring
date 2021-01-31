@@ -41,7 +41,7 @@ input_details=interpreter.get_input_details()
 output_details=interpreter.get_output_details()
 
 fr=30
-saveInterval=1000
+saveInterval=500
 cap=cv2.VideoCapture(0)
 i=0
 
