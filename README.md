@@ -9,7 +9,7 @@
 
 
 
-# <img src="https://github.com/Shaashwat05/baby_monitoring/blob/master/static/IMAGES/logo.png" width="5%" style="padding:2px; background-color:gray; white">Baby Shield
+# <img src="https://github.com/Shaashwat05/baby_monitoring/blob/master/static/IMAGES/logo.png" width="5%" style="padding:2px;">Baby Shield
 SIDS plagues mankind with its unpredictable nature. No more, as BabyShield monitors your baby remotely. Armed with technologies like RPI, PostNet, it makes sure your baby gets through the night.
 
 ### USP
