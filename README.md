@@ -16,7 +16,7 @@ SIDS plagues mankind with its unpredictable nature. No more, as BabyShield monit
 
 * The first complete project thats aims at preventing SIDS in children under the age of 16 months.
 * Implementation of AI algorithms like Pose Estimation for monitoring baby postures.
-* The use of selected contactless sensors to avoid harming the baby in anyway.
+* The use of selected passive contactless sensors to avoid harming the baby in any way.
 * An easy to use and informative user interface for every parent.
 
 
