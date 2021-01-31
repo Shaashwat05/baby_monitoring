@@ -10,7 +10,8 @@
 
 
 # <img src="https://github.com/Shaashwat05/baby_monitoring/blob/master/static/IMAGES/logo.png" width="5%" style="padding:2px;">Baby Shield
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/YnkD_ZJFTjM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![BabyShield](http://img.youtube.com/vi/YnkD_ZJFTjM/0.jpg)](https://www.youtube.com/watch?v=YnkD_ZJFTjM "Audi R8")
+
 SIDS plagues mankind with its unpredictable nature. No more, as BabyShield monitors your baby remotely. Armed with technologies like RPI, PostNet, it makes sure your baby gets through the night.
 
 ### USP
